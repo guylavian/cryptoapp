@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { dashboard } from '../controller/users/controller';
+import { addSymbol, dashboard } from '../controller/users/controller';
 
 const router = Router();
 
-router.get('/dashboard', dashboard)
+router.get('/dashboard', dashboard);
+router.post('/Symbol/add', addSymbol);
 
 export default router;

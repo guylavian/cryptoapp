@@ -5,3 +5,7 @@ export function dashboard(req: Request,res: Response ,next: NextFunction){
     
 
 }
+
+export function addSymbol(req: Request,res: Response ,next: NextFunction): void{
+    res.send('adding symbol')
+}
