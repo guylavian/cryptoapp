@@ -1,6 +1,7 @@
 import express from 'express';
 import userRouter from './routers/users'
 import path, { dirname } from 'path';
+import config from 'config'
 
 const server = express()
 
@@ -9,6 +10,8 @@ server.set('view engine', 'ejs');
 
 server.use('/users', userRouter);
 
-server.listen (8080, () => {
-    console.log('started')
+const port = config.get<number>('app.port');
+
+server.listen (port, () => {
+    console.log(`server listening on ${port}`);
 })
