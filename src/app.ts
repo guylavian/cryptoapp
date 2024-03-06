@@ -1,17 +1,25 @@
 import express from 'express';
-import userRouter from './routers/users'
-import path, { dirname } from 'path';
-import config from 'config'
+import usersRouter from './routers/users';
+import path from 'path';
+import config from 'config';
+import errorHandler from './middlewares/error/error-handler';
 
-const server = express()
+const server = express();
 
+// views setup
 server.set('views', path.resolve(__dirname, 'views'));
 server.set('view engine', 'ejs');
 
-server.use('/users', userRouter);
+// general middlewares
+server.use(express.urlencoded())
+
+// routing
+server.use('/users', usersRouter);
+
+// error middlewares
+server.use(errorHandler);
 
 const port = config.get<number>('app.port');
-
-server.listen (port, () => {
-    console.log(`server listening on ${port}`);
+server.listen(port, () => {
+    console.log(`Server listening on ${port}`);
 })

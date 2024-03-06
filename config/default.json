@@ -2,11 +2,19 @@
     "app": {
         "port": 8082
     },
-    "mysql":{
+    "worker": {
+        "interval": 30000
+    },
+    "mysql": {
         "host": "localhost",
+        "port": 3310,
         "user": "root",
         "password": "",
-        "port": 3010
-
+        "database": "cryptoapp"
+    },
+    "mongo": {
+        "host": "localhost",
+        "port": 27017,
+        "database": "cryptoapp"
     }
 }

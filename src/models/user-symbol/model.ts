@@ -1,6 +1,7 @@
-import { promises } from "dns";
 import { DTO } from "./dto";
 
-export interface Model{
-    add(users_symbols: DTO): Promise<DTO>;
+export interface Model {
+    add(userSymbol: DTO): Promise<DTO>;
+    getForUser(userId: number): Promise<DTO[]>;
+    getUniqueSymbols(): Promise<string[]>;
 }

@@ -1,7 +1,5 @@
-//user symbol model
-
-export interface DTO{
+export interface DTO {
     id: number;
-    userID: number;
+    userId: number;
     symbol: string;
 }

@@ -1,8 +1,10 @@
 {
     "version": "1.0.0",
     "configurations": [
-        
       {
+        "env": {
+            "NODE_ENV": "debug"
+        },
         "name": "TS-Node",
         "type": "node",
         "request": "launch",
